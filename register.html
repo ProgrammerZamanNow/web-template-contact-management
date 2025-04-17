@@ -6,10 +6,45 @@
     <title>Contact Management - Register</title>
     <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body class="bg-gray-900 min-h-screen flex items-center justify-center">
-    <div class="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md">
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center p-4">
+    <div class="animate-fade-in bg-gray-800 bg-opacity-80 p-8 rounded-xl shadow-custom border border-gray-700 backdrop-blur-sm w-full max-w-md">
         <div class="text-center mb-8">
+            <div class="inline-block p-3 bg-gradient rounded-full mb-4">
+                <i class="fas fa-user-plus text-3xl text-white"></i>
+            </div>
             <h1 class="text-3xl font-bold text-white">Contact Management</h1>
             <p class="text-gray-300 mt-2">Create a new account</p>
         </div>
@@ -17,42 +52,62 @@
         <form>
             <div class="mb-4">
                 <label for="username" class="block text-gray-300 text-sm font-medium mb-2">Username</label>
-                <input type="text" id="username" name="username" 
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
-                    placeholder="Choose a username" required>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-user text-gray-500"></i>
+                    </div>
+                    <input type="text" id="username" name="username" 
+                        class="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
+                        placeholder="Choose a username" required>
+                </div>
             </div>
 
             <div class="mb-4">
                 <label for="name" class="block text-gray-300 text-sm font-medium mb-2">Full Name</label>
-                <input type="text" id="name" name="name" 
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
-                    placeholder="Enter your full name" required>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-id-card text-gray-500"></i>
+                    </div>
+                    <input type="text" id="name" name="name" 
+                        class="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
+                        placeholder="Enter your full name" required>
+                </div>
             </div>
 
             <div class="mb-4">
                 <label for="password" class="block text-gray-300 text-sm font-medium mb-2">Password</label>
-                <input type="password" id="password" name="password" 
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
-                    placeholder="Create a password" required>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-lock text-gray-500"></i>
+                    </div>
+                    <input type="password" id="password" name="password" 
+                        class="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
+                        placeholder="Create a password" required>
+                </div>
             </div>
 
             <div class="mb-6">
                 <label for="confirm_password" class="block text-gray-300 text-sm font-medium mb-2">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" 
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
-                    placeholder="Confirm your password" required>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-check-double text-gray-500"></i>
+                    </div>
+                    <input type="password" id="confirm_password" name="confirm_password" 
+                        class="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" 
+                        placeholder="Confirm your password" required>
+                </div>
             </div>
 
             <div class="mb-6">
                 <button type="submit" 
-                    class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
-                    Register
+                    class="w-full bg-gradient text-white py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5">
+                    <i class="fas fa-user-plus mr-2"></i> Register
                 </button>
             </div>
 
             <div class="text-center text-sm text-gray-400">
                 Already have an account? 
-                <a href="index.html" class="text-blue-400 hover:text-blue-300 font-medium">Sign in</a>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">Sign in</a>
             </div>
         </form>
     </div>

@@ -6,16 +6,68 @@
     <title>Contact Management - Contact Details</title>
     <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
-<body class="bg-gray-900 min-h-screen flex flex-col">
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex flex-col">
     <!-- Header with right-aligned menu -->
-    <header class="bg-gray-800 shadow-md">
+    <header class="bg-gradient shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-white font-bold text-xl">Contact Management</div>
+            <div class="flex items-center">
+                <i class="fas fa-address-book text-white text-2xl mr-3"></i>
+                <div class="text-white font-bold text-xl">Contact Management</div>
+            </div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="profile.html" class="text-gray-300 hover:text-white">Profile</a></li>
-                    <li><a href="index.html" class="text-gray-300 hover:text-white">Logout</a></li>
+                    <li>
+                        <a href="profile.html" class="text-gray-100 hover:text-white flex items-center transition-colors duration-200">
+                            <i class="fas fa-user-circle mr-2"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="text-gray-100 hover:text-white flex items-center transition-colors duration-200">
+                            <i class="fas fa-sign-out-alt mr-2"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -24,54 +76,74 @@
     <!-- Main content -->
     <main class="container mx-auto px-4 py-8 flex-grow">
         <div class="flex items-center mb-6">
-            <a href="dashboard.html" class="text-blue-400 hover:text-blue-300 mr-4">← Back to Contacts</a>
-            <h1 class="text-2xl font-bold text-white">Contact Details</h1>
+            <a href="dashboard.html" class="text-blue-400 hover:text-blue-300 mr-4 flex items-center transition-colors duration-200">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Contacts
+            </a>
+            <h1 class="text-2xl font-bold text-white flex items-center">
+                <i class="fas fa-id-card text-blue-400 mr-3"></i> Contact Details
+            </h1>
         </div>
 
-        <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
-            <div class="p-6">
+        <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-custom border border-gray-700 overflow-hidden max-w-2xl mx-auto animate-fade-in">
+            <div class="p-8">
                 <!-- Contact Header -->
-                <div class="mb-6 text-center">
+                <div class="mb-8 text-center">
+                    <div class="w-20 h-20 bg-gradient rounded-full mx-auto flex items-center justify-center mb-4 shadow-lg">
+                        <i class="fas fa-user text-3xl text-white"></i>
+                    </div>
                     <h2 class="text-2xl font-bold text-white mb-2">John Doe</h2>
-                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                    <div class="w-24 h-1 bg-gradient mx-auto rounded-full"></div>
                 </div>
 
                 <!-- Contact Information -->
-                <div class="space-y-4 mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <h3 class="text-gray-300 text-sm font-medium mb-1">First Name</h3>
-                            <p class="text-white text-lg">John</p>
+                <div class="space-y-5 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 transition-all duration-200 hover:bg-opacity-70">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-user-tag text-blue-400 mr-2"></i>
+                                <h3 class="text-gray-300 text-sm font-medium">First Name</h3>
+                            </div>
+                            <p class="text-white text-lg ml-6">John</p>
                         </div>
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <h3 class="text-gray-300 text-sm font-medium mb-1">Last Name</h3>
-                            <p class="text-white text-lg">Doe</p>
+                        <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 transition-all duration-200 hover:bg-opacity-70">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-user-tag text-blue-400 mr-2"></i>
+                                <h3 class="text-gray-300 text-sm font-medium">Last Name</h3>
+                            </div>
+                            <p class="text-white text-lg ml-6">Doe</p>
                         </div>
                     </div>
 
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-gray-300 text-sm font-medium mb-1">Email</h3>
-                        <p class="text-white text-lg">john.doe@example.com</p>
+                    <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 transition-all duration-200 hover:bg-opacity-70">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                            <h3 class="text-gray-300 text-sm font-medium">Email</h3>
+                        </div>
+                        <p class="text-white text-lg ml-6">john.doe@example.com</p>
                     </div>
 
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-gray-300 text-sm font-medium mb-1">Phone</h3>
-                        <p class="text-white text-lg">+1 (555) 123-4567</p>
+                    <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 transition-all duration-200 hover:bg-opacity-70">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-phone text-blue-400 mr-2"></i>
+                            <h3 class="text-gray-300 text-sm font-medium">Phone</h3>
+                        </div>
+                        <p class="text-white text-lg ml-6">+1 (555) 123-4567</p>
                     </div>
                 </div>
 
                 <!-- Addresses Section -->
-                <div class="mb-6">
-                    <h3 class="text-xl font-semibold text-white mb-4">Addresses</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="mb-8">
+                    <div class="flex items-center mb-5">
+                        <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Addresses</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <!-- Add Address Card -->
-                        <div class="bg-gray-700 p-4 rounded-lg border-2 border-dashed border-gray-600">
+                        <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg border-2 border-dashed border-gray-600 shadow-md card-hover">
                             <a href="add_address.html" class="block h-full">
                                 <div class="flex flex-col items-center justify-center h-full text-center py-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                                        </svg>
+                                    <div class="w-16 h-16 bg-gradient rounded-full flex items-center justify-center mb-4 shadow-lg transform transition-transform duration-300 hover:scale-110">
+                                        <i class="fas fa-plus text-2xl text-white"></i>
                                     </div>
                                     <h4 class="text-lg font-semibold text-white">Add Address</h4>
                                 </div>
@@ -79,62 +151,92 @@
                         </div>
 
                         <!-- Address Card 1 -->
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <div class="space-y-2 text-gray-300 mb-3">
+                        <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 card-hover">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3 shadow-md">
+                                    <i class="fas fa-home text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white">Home Address</h4>
+                            </div>
+                            <div class="space-y-3 text-gray-300 ml-2 mb-4">
                                 <p class="flex items-center">
+                                    <i class="fas fa-road text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Street:</span>
                                     <span>123 Main St</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-city text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">City:</span>
                                     <span>New York</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-map text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Province:</span>
                                     <span>NY</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-flag text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Country:</span>
                                     <span>USA</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-mailbox text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Postal Code:</span>
                                     <span>10001</span>
                                 </p>
                             </div>
-                            <div class="flex justify-end space-x-2">
-                                <a href="edit_address.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
-                                <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                            <div class="flex justify-end space-x-3">
+                                <a href="edit_address.html" class="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                    <i class="fas fa-edit mr-2"></i> Edit
+                                </a>
+                                <button class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                    <i class="fas fa-trash-alt mr-2"></i> Delete
+                                </button>
                             </div>
                         </div>
 
                         <!-- Address Card 2 -->
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <div class="space-y-2 text-gray-300 mb-3">
+                        <div class="bg-gray-700 bg-opacity-50 p-5 rounded-lg shadow-md border border-gray-600 card-hover">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3 shadow-md">
+                                    <i class="fas fa-building text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white">Work Address</h4>
+                            </div>
+                            <div class="space-y-3 text-gray-300 ml-2 mb-4">
                                 <p class="flex items-center">
+                                    <i class="fas fa-road text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Street:</span>
                                     <span>456 Oak Ave</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-city text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">City:</span>
                                     <span>San Francisco</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-map text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Province:</span>
                                     <span>CA</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-flag text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Country:</span>
                                     <span>USA</span>
                                 </p>
                                 <p class="flex items-center">
+                                    <i class="fas fa-mailbox text-gray-500 w-6"></i>
                                     <span class="font-medium w-24">Postal Code:</span>
                                     <span>94102</span>
                                 </p>
                             </div>
-                            <div class="flex justify-end space-x-2">
-                                <a href="edit_address.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
-                                <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                            <div class="flex justify-end space-x-3">
+                                <a href="edit_address.html" class="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                    <i class="fas fa-edit mr-2"></i> Edit
+                                </a>
+                                <button class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                                    <i class="fas fa-trash-alt mr-2"></i> Delete
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -143,13 +245,18 @@
                 <!-- Action Buttons -->
                 <div class="flex justify-end space-x-4">
                     <a href="dashboard.html" 
-                        class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
-                        Back
+                        class="px-5 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center shadow-md">
+                        <i class="fas fa-arrow-left mr-2"></i> Back
                     </a>
                     <a href="edit_contact.html" 
-                        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
-                        Edit Contact
+                        class="px-5 py-3 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center">
+                        <i class="fas fa-user-edit mr-2"></i> Edit Contact
                     </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="mt-10 text-center text-gray-400 text-sm animate-fade-in">
+                    <p>© 2023 Contact Management. All rights reserved.</p>
                 </div>
             </div>
         </div>
