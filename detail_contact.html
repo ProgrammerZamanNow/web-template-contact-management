@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management - Contact Details</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen flex flex-col">
+    <!-- Header with right-aligned menu -->
+    <header class="bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-white font-bold text-xl">Contact Management</div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white">Profile</a></li>
+                    <li><a href="index.html" class="text-gray-300 hover:text-white">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div class="flex items-center mb-6">
+            <a href="dashboard.html" class="text-blue-400 hover:text-blue-300 mr-4">← Back to Contacts</a>
+            <h1 class="text-2xl font-bold text-white">Contact Details</h1>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
+            <div class="p-6">
+                <!-- Contact Header -->
+                <div class="mb-6 text-center">
+                    <h2 class="text-2xl font-bold text-white mb-2">John Doe</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-4 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h3 class="text-gray-300 text-sm font-medium mb-1">First Name</h3>
+                            <p class="text-white text-lg">John</p>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h3 class="text-gray-300 text-sm font-medium mb-1">Last Name</h3>
+                            <p class="text-white text-lg">Doe</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-gray-300 text-sm font-medium mb-1">Email</h3>
+                        <p class="text-white text-lg">john.doe@example.com</p>
+                    </div>
+
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-gray-300 text-sm font-medium mb-1">Phone</h3>
+                        <p class="text-white text-lg">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+
+                <!-- Addresses Section -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Addresses</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Add Address Card -->
+                        <div class="bg-gray-700 p-4 rounded-lg border-2 border-dashed border-gray-600">
+                            <a href="add_address.html" class="block h-full">
+                                <div class="flex flex-col items-center justify-center h-full text-center py-4">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-white">Add Address</h4>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Address Card 1 -->
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <div class="space-y-2 text-gray-300 mb-3">
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Street:</span>
+                                    <span>123 Main St</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">City:</span>
+                                    <span>New York</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Province:</span>
+                                    <span>NY</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Country:</span>
+                                    <span>USA</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Postal Code:</span>
+                                    <span>10001</span>
+                                </p>
+                            </div>
+                            <div class="flex justify-end space-x-2">
+                                <a href="edit_address.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                                <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                            </div>
+                        </div>
+
+                        <!-- Address Card 2 -->
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <div class="space-y-2 text-gray-300 mb-3">
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Street:</span>
+                                    <span>456 Oak Ave</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">City:</span>
+                                    <span>San Francisco</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Province:</span>
+                                    <span>CA</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Country:</span>
+                                    <span>USA</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <span class="font-medium w-24">Postal Code:</span>
+                                    <span>94102</span>
+                                </p>
+                            </div>
+                            <div class="flex justify-end space-x-2">
+                                <a href="edit_address.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                                <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-end space-x-4">
+                    <a href="dashboard.html" 
+                        class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                        Back
+                    </a>
+                    <a href="edit_contact.html" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                        Edit Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

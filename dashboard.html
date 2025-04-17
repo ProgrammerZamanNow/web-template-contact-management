@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management - Dashboard</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen flex flex-col">
+    <!-- Header with right-aligned menu -->
+    <header class="bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-white font-bold text-xl">Contact Management</div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white">Profile</a></li>
+                    <li><a href="index.html" class="text-gray-300 hover:text-white">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <h1 class="text-2xl font-bold text-white mb-6">My Contacts</h1>
+
+        <!-- Search form -->
+        <div class="bg-gray-800 rounded-lg shadow-md p-5 mb-6">
+            <h2 class="text-xl font-semibold text-white mb-4">Search Contacts</h2>
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="search_name" class="block text-gray-300 text-sm font-medium mb-2">Name</label>
+                        <input type="text" id="search_name" name="search_name" 
+                            class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
+                            placeholder="Search by name">
+                    </div>
+                    <div>
+                        <label for="search_email" class="block text-gray-300 text-sm font-medium mb-2">Email</label>
+                        <input type="text" id="search_email" name="search_email" 
+                            class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
+                            placeholder="Search by email">
+                    </div>
+                    <div>
+                        <label for="search_phone" class="block text-gray-300 text-sm font-medium mb-2">Phone</label>
+                        <input type="text" id="search_phone" name="search_phone" 
+                            class="w-full px-3 py-2 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" 
+                            placeholder="Search by phone">
+                    </div>
+                </div>
+                <div class="mt-4 text-right">
+                    <button type="submit" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact cards grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Create New Contact Card -->
+            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden border-2 border-dashed border-gray-700">
+                <a href="create_contact.html" class="block p-5 h-full">
+                    <div class="flex flex-col items-center justify-center h-full text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-semibold text-white mb-2">Create New Contact</h2>
+                        <p class="text-gray-300">Add a new contact to your list</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Contact Card 1 -->
+            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <div class="p-5">
+                    <a href="detail_contact.html" class="block cursor-pointer hover:bg-gray-700 rounded-md transition duration-150">
+                        <h2 class="text-xl font-semibold text-white mb-2 hover:text-blue-300">John Doe</h2>
+                        <div class="space-y-2 text-gray-300">
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">First Name:</span>
+                                <span>John</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Last Name:</span>
+                                <span>Doe</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Email:</span>
+                                <span>john.doe@example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Phone:</span>
+                                <span>+1 (555) 123-4567</span>
+                            </p>
+                        </div>
+                    </a>
+                    <div class="mt-4 flex justify-end space-x-2">
+                        <a href="edit_contact.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                        <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Card 2 -->
+            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <div class="p-5">
+                    <a href="detail_contact.html" class="block cursor-pointer hover:bg-gray-700 rounded-md transition duration-150">
+                        <h2 class="text-xl font-semibold text-white mb-2 hover:text-blue-300">Jane Smith</h2>
+                        <div class="space-y-2 text-gray-300">
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">First Name:</span>
+                                <span>Jane</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Last Name:</span>
+                                <span>Smith</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Email:</span>
+                                <span>jane.smith@example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Phone:</span>
+                                <span>+1 (555) 987-6543</span>
+                            </p>
+                        </div>
+                    </a>
+                    <div class="mt-4 flex justify-end space-x-2">
+                        <a href="edit_contact.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                        <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Card 3 -->
+            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <div class="p-5">
+                    <a href="detail_contact.html" class="block cursor-pointer hover:bg-gray-700 rounded-md transition duration-150">
+                        <h2 class="text-xl font-semibold text-white mb-2 hover:text-blue-300">Robert Johnson</h2>
+                        <div class="space-y-2 text-gray-300">
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">First Name:</span>
+                                <span>Robert</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Last Name:</span>
+                                <span>Johnson</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Email:</span>
+                                <span>robert.j@example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Phone:</span>
+                                <span>+1 (555) 456-7890</span>
+                            </p>
+                        </div>
+                    </a>
+                    <div class="mt-4 flex justify-end space-x-2">
+                        <a href="edit_contact.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                        <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Card 4 -->
+            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                <div class="p-5">
+                    <a href="detail_contact.html" class="block cursor-pointer hover:bg-gray-700 rounded-md transition duration-150">
+                        <h2 class="text-xl font-semibold text-white mb-2 hover:text-blue-300">Emily Davis</h2>
+                        <div class="space-y-2 text-gray-300">
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">First Name:</span>
+                                <span>Emily</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Last Name:</span>
+                                <span>Davis</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Email:</span>
+                                <span>emily.davis@example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <span class="font-medium w-24">Phone:</span>
+                                <span>+1 (555) 234-5678</span>
+                            </p>
+                        </div>
+                    </a>
+                    <div class="mt-4 flex justify-end space-x-2">
+                        <a href="edit_contact.html" class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Edit</a>
+                        <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-8 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <a href="#" class="px-3 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                    Previous
+                </a>
+                <a href="#" class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                    1
+                </a>
+                <a href="#" class="px-3 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                    2
+                </a>
+                <a href="#" class="px-3 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                    3
+                </a>
+                <a href="#" class="px-3 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800 transition duration-150">
+                    Next
+                </a>
+            </nav>
+        </div>
+    </main>
+</body>
+</html>
